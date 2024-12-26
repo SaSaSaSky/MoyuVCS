@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+	<!--  This is the file that defines the actual layout and type of the commands.
+        It is divided in different sections (e.g. command definition, command
+        placement, ...), with each defining a specific set of properties.
+        See the comment before each section for more details about how to
+        use it. -->
+
+	<!--  The VSCT compiler (the tool that translates this file into the binary
+        format that VisualStudio will consume) has the ability to run a preprocessor
+        on the vsct file; this preprocessor is (usually) the C++ preprocessor, so
+        it is possible to define includes and macros with the same syntax used
+        in C++ files. Using this ability of the compiler here, we include some files
+        defining some of the constants that we will use inside the file. -->
+
+	<!--This is the file that defines the IDs for all the commands exposed by VisualStudio. -->
+	<Extern href="stdidcmd.h" />
+
+	<!--This header contains the command ids for the menus provided by the shell. -->
+	<Extern href="vsshlids.h" />
+
+	<Commands package="guidMoyuVCSPackage">
+		<Menus>
+			<Menu guid="guidMoyuVCSPackageCmdSet" id="FileMenu" priority="0x3110" type="Menu">
+				<Parent guid="guidMoyuVCSPackageCmdSet" id="FileMenuGroup1" />
+				<Icon guid="guidImages" id="bmpPic1" />
+				<Strings>
+					<ButtonText>MoyuVCS</ButtonText>
+					<CommandName>MoyuVCS</CommandName>
+				</Strings>
+			</Menu>
+			
+			<Menu guid="guidMoyuVCSPackageCmdSet1" id="NodeMenu" priority="0x3110" type="Menu">
+				<Parent guid="guidMoyuVCSPackageCmdSet1" id="NodeMenuGroup1" />
+				<Icon guid="guidImages1" id="bmpPic1" />
+				<Strings>
+					<ButtonText>MoyuVCS</ButtonText>
+					<CommandName>MoyuVCS</CommandName>
+				</Strings>
+			</Menu>
+		</Menus>
+		<Groups>
+			<Group guid="guidMoyuVCSPackageCmdSet" id="FileMenuGroup1" priority="0x0600">
+			</Group>
+			<Group guid="guidMoyuVCSPackageCmdSet" id="FileMenuGroup2" priority="0x0600">
+				<Parent guid="guidMoyuVCSPackageCmdSet" id="FileMenu" />
+			</Group>
+
+			<Group guid="guidMoyuVCSPackageCmdSet1" id="NodeMenuGroup1" priority="0x0600">
+			</Group>
+			<Group guid="guidMoyuVCSPackageCmdSet1" id="NodeMenuGroup2" priority="0x0600">
+				<Parent guid="guidMoyuVCSPackageCmdSet1" id="NodeMenu" />
+			</Group>
+			
+		</Groups>
+
+		<Buttons>
+			<Button guid="guidMoyuVCSPackageCmdSet" id="MoyuVCSCommandId1" priority="0x0100" type="Button">
+				<Parent guid="guidMoyuVCSPackageCmdSet" id="FileMenuGroup2" />
+				<CommandFlag>DynamicVisibility</CommandFlag>
+				<Icon guid="guidImages1" id="bmpPic1" />
+				<Strings>
+					<ButtonText>Update</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidMoyuVCSPackageCmdSet" id="MoyuVCSCommandId2" priority="0x0100" type="Button">
+				<Parent guid="guidMoyuVCSPackageCmdSet" id="FileMenuGroup2" />
+				<CommandFlag>DynamicVisibility</CommandFlag>
+				<Icon guid="guidImages2" id="bmpPic1" />
+				<Strings>
+					<ButtonText>Commit</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidMoyuVCSPackageCmdSet" id="MoyuVCSCommandId3" priority="0x0100" type="Button">
+				<Parent guid="guidMoyuVCSPackageCmdSet" id="FileMenuGroup2" />
+				<CommandFlag>DynamicVisibility</CommandFlag>
+				<Icon guid="guidImages3" id="bmpPic1" />
+				<Strings>
+					<ButtonText>Show Log</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidMoyuVCSPackageCmdSet" id="MoyuVCSCommandId4" priority="0x0100" type="Button">
+				<Parent guid="guidMoyuVCSPackageCmdSet" id="FileMenuGroup2" />
+				<CommandFlag>DynamicVisibility</CommandFlag>
+				<Icon guid="guidImages4" id="bmpPic1" />
+				<Strings>
+					<ButtonText>Revert</ButtonText>
+				</Strings>
+			</Button>
+
+
+
+			<Button guid="guidMoyuVCSPackageCmdSet1" id="NodeCommandId1" priority="0x0100" type="Button">
+				<Parent guid="guidMoyuVCSPackageCmdSet1" id="NodeMenuGroup2" />
+				<CommandFlag>DynamicVisibility</CommandFlag>
+				<Icon guid="guidImages1" id="bmpPic1" />
+				<Strings>
+					<ButtonText>Update</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidMoyuVCSPackageCmdSet1" id="NodeCommandId2" priority="0x0100" type="Button">
+				<Parent guid="guidMoyuVCSPackageCmdSet1" id="NodeMenuGroup2" />
+				<CommandFlag>DynamicVisibility</CommandFlag>
+				<Icon guid="guidImages2" id="bmpPic1" />
+				<Strings>
+					<ButtonText>Commit</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidMoyuVCSPackageCmdSet1" id="NodeCommandId3" priority="0x0100" type="Button">
+				<Parent guid="guidMoyuVCSPackageCmdSet1" id="NodeMenuGroup2" />
+				<CommandFlag>DynamicVisibility</CommandFlag>
+				<Icon guid="guidImages3" id="bmpPic1" />
+				<Strings>
+					<ButtonText>Show Log</ButtonText>
+				</Strings>
+			</Button>
+			<Button guid="guidMoyuVCSPackageCmdSet1" id="NodeCommandId4" priority="0x0100" type="Button">
+				<Parent guid="guidMoyuVCSPackageCmdSet1" id="NodeMenuGroup2" />
+				<CommandFlag>DynamicVisibility</CommandFlag>
+				<Icon guid="guidImages4" id="bmpPic1" />
+				<Strings>
+					<ButtonText>Revert</ButtonText>
+				</Strings>
+			</Button>
+		</Buttons>
+
+		<Bitmaps>
+			<!--<Bitmap guid="guidImages" href="Resources\FileCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />
+			<Bitmap guid="guidImages1" href="Resources\NodeCommand.png" usedList="bmpPic1, bmpPic2, bmpPicSearch, bmpPicX, bmpPicArrows, bmpPicStrikethrough" />-->
+			<Bitmap guid="guidImages1" href="Resources\dragon.ico" usedList="bmpPic1" />
+			<Bitmap guid="guidImages2" href="Resources\penguin.ico" usedList="bmpPic1" />
+			<Bitmap guid="guidImages3" href="Resources\rabbit.ico" usedList="bmpPic1" />
+			<Bitmap guid="guidImages4" href="Resources\sheep.ico" usedList="bmpPic1" />
+		</Bitmaps>
+	</Commands>
+	<CommandPlacements>
+		<!--IDM_VS_CTXT_SOLNNODE 解决方案
+		IDM_VS_CTXT_PROJNODE 工程文件
+		IDM_VS_CTXT_FOLDERNODE 文件夹
+		IDM_VS_CTXT_ITEMNODE 文件
+		IDM_VS_CTXT_EZDOCWINTAB 窗口tab页
+		IDM_VS_CTXT_CODEWIN 代码页面-->
+
+		<CommandPlacement guid="guidMoyuVCSPackageCmdSet" id="FileMenuGroup1" priority="0x0000">
+			<Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_CODEWIN" />
+		</CommandPlacement>
+		<CommandPlacement guid="guidMoyuVCSPackageCmdSet" id="FileMenuGroup1" priority="0x0000">
+			<Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_EZDOCWINTAB" />
+		</CommandPlacement>
+
+		<CommandPlacement guid="guidMoyuVCSPackageCmdSet1" id="NodeMenuGroup1" priority="0x0000">
+			<Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_PROJNODE" />
+		</CommandPlacement>
+		<CommandPlacement guid="guidMoyuVCSPackageCmdSet1" id="NodeMenuGroup1" priority="0x0000">
+			<Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_SOLNNODE" />
+		</CommandPlacement>
+		<CommandPlacement guid="guidMoyuVCSPackageCmdSet1" id="NodeMenuGroup1" priority="0x0000">
+			<Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_ITEMNODE" />
+		</CommandPlacement>
+		<CommandPlacement guid="guidMoyuVCSPackageCmdSet1" id="NodeMenuGroup1" priority="0x0000">
+			<Parent guid="guidSHLMainMenu" id="IDM_VS_CTXT_FOLDERNODE" />
+		</CommandPlacement>
+	</CommandPlacements>
+
+	<Symbols>
+		<GuidSymbol name="guidMoyuVCSPackage" value="{417a7b28-ee71-419b-b146-3c12bf0920b8}" />
+		<GuidSymbol name="guidMoyuVCSPackageCmdSet" value="{4224b7c8-c371-40fe-8106-2437237815f1}">
+			<IDSymbol name="FileMenuGroup1" value="0x1020" />
+			<IDSymbol name="FileMenuGroup2" value="0x1021" />
+			<IDSymbol name="FileMenu" value="0x1022" />
+			<IDSymbol name="MoyuVCSCommandId1" value="0x0100" />
+			<IDSymbol name="MoyuVCSCommandId2" value="0x0101" />
+			<IDSymbol name="MoyuVCSCommandId3" value="0x0102" />
+			<IDSymbol name="MoyuVCSCommandId4" value="0x0103" />
+		</GuidSymbol>
+
+		<GuidSymbol value="{6664729f-049d-4c50-a236-aa626e4306a2}" name="guidMoyuVCSPackageCmdSet1">
+			<IDSymbol name="NodeMenuGroup1" value="4128" />
+			<IDSymbol name="NodeMenuGroup2" value="4129" />
+			<IDSymbol name="NodeMenu" value="4130" />
+			<IDSymbol name="NodeCommandId1" value="256" />
+			<IDSymbol name="NodeCommandId2" value="257" />
+			<IDSymbol name="NodeCommandId3" value="258" />
+			<IDSymbol name="NodeCommandId4" value="259" />
+		</GuidSymbol>
+
+
+		<GuidSymbol name="guidImages1" value="{ad59dea2-994c-4f31-b80c-81db49601660}">
+			<IDSymbol name="bmpPic1" value="1" />
+		</GuidSymbol>
+		<GuidSymbol name="guidImages2" value="{4ccc14f7-92b2-4e5b-a625-f0698e572e8e}">
+			<IDSymbol name="bmpPic1" value="1" />
+		</GuidSymbol>
+		<GuidSymbol name="guidImages3" value="{4ccc14f7-92b2-4e5b-a625-f0699e572e8e}">
+			<IDSymbol name="bmpPic1" value="1" />
+		</GuidSymbol>
+		<GuidSymbol name="guidImages4" value="{4ccc14f7-92b2-4e5b-a625-f1698e572e8e}">
+			<IDSymbol name="bmpPic1" value="1" />
+		</GuidSymbol>
+	</Symbols>
+</CommandTable>
